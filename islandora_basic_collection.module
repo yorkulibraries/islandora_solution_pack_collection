@@ -366,7 +366,7 @@ function islandora_basic_collection_get_query_info(array $params, $type = 'view'
   // Add in defaults.
   $params += array(
     'page_number' => 0,
-    'page_size' => 10,
+    'page_size' => 1000,
     'vars' => '?object ?title ?owner ?date_modified',
     'order_by' => '?title',
     'model' => '?model',
