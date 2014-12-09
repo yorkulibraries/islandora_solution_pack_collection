@@ -175,7 +175,7 @@ function islandora_basic_collection_delete_all_children_batch_operation(Abstract
     $context['sandbox']['current'] = 0.0;
   }
 
-  $results = islandora_basic_collection_get_member_objects($collection, 0, 10, 'manage');
+  $results = islandora_basic_collection_get_member_objects($collection, 0, 1000, 'manage');
   if ($results) {
     list($count, $members) = $results;
     foreach ($members as $result) {
@@ -405,7 +405,7 @@ function islandora_basic_collection_share_children_batch_operation(AbstractObjec
  *   The batch context.
  */
 function islandora_basic_collection_migrate_all_children_batch_operation(AbstractObject $source, AbstractObject $destination, &$context) {
-  $results = islandora_basic_collection_get_member_objects($source, 0, 10, 'manage');
+  $results = islandora_basic_collection_get_member_objects($source, 0, 1000, 'manage');
   if ($results) {
     list($count, $members) = $results;
     if (!isset($context['sandbox']['total_count'])) {
@@ -435,7 +435,7 @@ function islandora_basic_collection_migrate_all_children_batch_operation(Abstrac
  *   The batch context.
  */
 function islandora_basic_collection_share_all_children_batch_operation(AbstractObject $source, AbstractObject $destination, &$context) {
-  $results = islandora_basic_collection_get_member_objects($source, $context['sandbox']['page'], 10, 'manage');
+  $results = islandora_basic_collection_get_member_objects($source, $context['sandbox']['page'], 1000, 'manage');
   $context['sandbox']['page']++;
   if ($results) {
     list ($count, $members) = $results;

@@ -17,7 +17,7 @@ function template_preprocess_islandora_basic_collection_grid(&$variables) {
  */
 function template_preprocess_islandora_basic_collection_wrapper(&$variables) {
   $page_number = (empty($_GET['page'])) ? 0 : $_GET['page'];
-  $page_size = (empty($_GET['pagesize'])) ? variable_get('islandora_basic_collection_page_size', '10') : $_GET['pagesize'];
+  $page_size = (empty($_GET['pagesize'])) ? variable_get('islandora_basic_collection_page_size', '1000') : $_GET['pagesize'];
   $islandora_object = $variables['islandora_object'];
   try {
     $dc = $islandora_object['DC']->content;
